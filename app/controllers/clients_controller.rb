@@ -18,9 +18,16 @@ class ClientsController < ApplicationController
   end
 
   def edit
+    @client = Client.find(params[:id])
   end
 
   def show
+    @client = Client.find(params[:id])
+
+    respond_to do |format|
+      format.html #index.html.erb
+      format.json {render :json => @client }
+    end
   end
 
   def create
@@ -34,6 +41,21 @@ class ClientsController < ApplicationController
         format.html {render :action => "new"}
         format.json {render :json => @client.errors, :status => :unprocessable_entity}
       end
+    end
+  end
+
+  def update
+
+  end
+
+  def destroy
+    @client = Client.find(params[:id])
+
+    @client.destroy
+
+    respond_to do |format|
+      format.html { redirect_to clients_url}
+      format.json { head :no_content }
     end
   end
 end
