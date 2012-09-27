@@ -15,7 +15,7 @@
     <td><%= client.company %></td>
     <td><%= link_to "View", client %></td>
     <td><%= link_to "Edit", edit_client_path(client) %></td>
-    <td><%= link_to "Delete", post, :confirm => 'Deleting is irreversible. Are you sure you want to continue?', :method => :delete %></td>
+    <td><%= link_to "Delete", client, :confirm => 'Deleting is irreversible. Are you sure you want to continue?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
