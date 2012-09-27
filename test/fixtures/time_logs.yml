@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_time: 2012-09-26 22:39:44
+  end_time: 2012-09-26 22:39:44
+  total_time: 9.99
+  project: 
+
+two:
+  start_time: 2012-09-26 22:39:44
+  end_time: 2012-09-26 22:39:44
+  total_time: 9.99
+  project: 

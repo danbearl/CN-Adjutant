@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  statement_of_work: MyText
+  estimated_start_date: 2012-09-26
+  actual_start_date: 2012-09-26
+  estimated_completion_date: 2012-09-26
+  actual_completion_date: 2012-09-26
+  rate: 9.99
+  hours: 9.99
+  cost_to_date: 9.99
+  estimated_cost: 9.99
+  client: 
+
+two:
+  name: MyString
+  statement_of_work: MyText
+  estimated_start_date: 2012-09-26
+  actual_start_date: 2012-09-26
+  estimated_completion_date: 2012-09-26
+  actual_completion_date: 2012-09-26
+  rate: 9.99
+  hours: 9.99
+  cost_to_date: 9.99
+  estimated_cost: 9.99
+  client: 

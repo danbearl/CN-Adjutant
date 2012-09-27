@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date_issued: 2012-09-26
+  date_due: 2012-09-26
+  date_paid: 2012-09-26
+  amount_due: 9.99
+  client: 
+
+two:
+  date_issued: 2012-09-26
+  date_due: 2012-09-26
+  date_paid: 2012-09-26
+  amount_due: 9.99
+  client: 
