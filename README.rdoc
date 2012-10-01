@@ -2,4 +2,9 @@ Code Name: Adjutant is a simple Web application built using Ruby on Rails that w
 
 This is my first Rails app and I am building it to help learn the framework. It is not currently functional, but this README will contain all documntation on the app as it is completed as well as instructions on use.
 
+UPDATED Oct. 1, 2012:
+Client and Project models can now be created and are properly nested. Client view includes a list of associated projects, which can be viewed individually. Project Edit action is properly linked to the projects/:id/edit view, but controller and form are yet to be written.
+
+Next updates will be to complete the projects/edit action, and then begin building project resources for notes, timelogs, changelogs and expenses.
+
 -Dan Bearl
