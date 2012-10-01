@@ -24,6 +24,7 @@ class ClientsController < ApplicationController
   def show
     @client = Client.find(params[:id])
 
+
     respond_to do |format|
       format.html #index.html.erb
       format.json {render :json => @client }
@@ -45,7 +46,17 @@ class ClientsController < ApplicationController
   end
 
   def update
+    @client = Client.find(params[:id])
 
+    respond_to do |format|
+      if @client.update_attributes(params[:client])
+        format.html {redirect_to(@client, :notice => "Client updated successfully.")}
+        format.json {head :no_content}
+      else
+        format.html {render :action => "edit"}
+        format.json {render :json => @client.errors, :status => :unprocessable_entity }
+      end
+    end
   end
 
   def destroy

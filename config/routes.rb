@@ -1,26 +1,9 @@
 Adjutant::Application.routes.draw do
-  get "clients/index"
-
-  get "clients/new"
-
-  get "clients/edit"
-
-  get "clients/show"
-
-  get "client/edit"
-
-  get "client/show"
-
-  get "client/new"
-
-  get "client/index"
 
   resources :clients do
     resources :projects
   end
-
-  get "home/index"
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

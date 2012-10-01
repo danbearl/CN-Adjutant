@@ -1,0 +1,28 @@
+<h1>Projects for <%= @client.id %></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>ESD</th>
+    <th>ECD</th>
+    <th>Rate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.name %></td>
+    <td><%= project.estimated_start_date %></td>
+    <td><%= project.estimated_completion_date %>
+    <td><%= project.rate %>
+    <td><%= link_to "View", [project.client, project], :method => :get %></td>
+    <td><%= link_to "Edit", [project.client, project], :method => :put %></td>
+    <td><%= link_to "Delete", [project.client, project], :confirm => 'Deleting is irreversible. Are you sure you want to continue?', :method => :delete %></td>
+  </tr>
+
+<% end %>
+</table><br />
+
+<%= link_to "New Project", new_client_project_path %> | 
+<%= link_to "Back", @client %>

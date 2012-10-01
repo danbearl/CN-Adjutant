@@ -22,5 +22,25 @@
   <%= @client.notes %>
 </p>
 
+<div class="projects_block">
+  <h2>Projects</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>ESD</th>
+    <th>ECD</th>
+    <th>Rate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+  <%= render @client.projects %>
+</table>
+<br />
+
+  <%= link_to "New Project", new_client_project_path(@client) %>
+</div>
+
 <%= link_to "Edit", edit_client_path(@client) %> |
 <%= link_to "Back", clients_path %>

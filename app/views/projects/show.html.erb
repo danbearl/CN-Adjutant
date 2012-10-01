@@ -1,0 +1,53 @@
+<h1>Project <%= @project.id %></h1>
+<p>
+	<b>Name:</b>
+	<%= @project.name %><br />
+</p>
+
+<p>
+	<b>Statement of work:</b>
+	<%= @project.statement_of_work %><br />
+</p>
+
+<p>
+	<b>Estimated Start Date:</b>
+	<%= @project.estimated_start_date %><br />
+</p>
+
+<p>
+	<b>Actual Start Date:</b>
+	<%= @project.actual_start_date %><br />
+</p>
+
+<p>
+	<b>Estimated Completion Date:</b>
+	<%= @project.estimated_completion_date %><br />
+</p>
+
+<p>
+	<b>Actual Completion Date:</b>
+	<%= @project.actual_completion_date %><br />
+</p>
+
+<p>
+	<b>Hourly Rate:</b>
+	<%= @project.rate %><br />
+</p>
+
+<p>
+	<b>Hours To Date:</b>
+	<em>Future Feature will calculate hours based on time logs associated with project.</em><br />
+</p>
+
+<p>
+	<b>Estimated Cost:</b>
+	<%= @project.estimated_cost %><br />
+</p>
+
+<p>
+	<b>Cost To Date:</b>
+	<em>Future Feature will calculate total costs based on time logs and expenses.</em><br />
+</p>
+
+<%= link_to 'Edit', edit_client_project_path(@project) %> |
+<%= link_to 'Back', client_projects_path %>
