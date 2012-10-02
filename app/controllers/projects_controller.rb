@@ -61,4 +61,18 @@ class ProjectsController < ApplicationController
       format.json { render :json => @projects }
     end
   end
+  
+  def update
+    @project = Project.find(params[:id])
+
+    respond_to do |format|
+      if @project.update_attributes(params[:project])
+        format.html {redirect_to([@project.client, @project], :notice => "Project updated successfully.")}
+        format.json {head :no_content}
+      else
+        format.html {render :action => "edit"}
+        format.json {render :json => @client.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 end
