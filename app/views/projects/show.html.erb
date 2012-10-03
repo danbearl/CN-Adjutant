@@ -49,5 +49,25 @@
 	<em>Future Feature will calculate total costs based on time logs and expenses.</em><br />
 </p>
 
+<div class="notes_block">
+  <h2>Notes</h2>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Created</th>
+    <th>Updated</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+  <%= render @project.notes %>
+</table>
+<br />
+
+  <%= link_to "New Note", new_project_note_path(@project) %>
+</div>
+
+
 <%= link_to 'Edit', edit_client_project_path(@project) %> |
 <%= link_to 'Back', client_path(@project.client) %>

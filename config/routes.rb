@@ -1,8 +1,22 @@
 Adjutant::Application.routes.draw do
 
+  get "notes/show"
+
+  get "notes/edit"
+
+  get "notes/new"
+
+  get "notes/index"
+
   resources :clients do
-    resources :projects
+    resources :projects, :invoices
   end
+  
+  resources :projects do
+  	resources :notes
+  end
+  
+  resources :notes
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

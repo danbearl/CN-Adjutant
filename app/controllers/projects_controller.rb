@@ -37,9 +37,6 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
   
-  def update
-  end
-  
   def destroy
     @client = Client.find(params[:client_id])
     @project = Project.find(params[:id])

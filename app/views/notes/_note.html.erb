@@ -1,0 +1,8 @@
+  <tr>
+    <td><%= note.title %></td>
+    <td><%= note.created_at %></td>
+    <td><%= note.updated_at %></td>
+    <td><%= link_to "View", [note.project, note], :method => :get %></td>
+    <td><%= link_to "Edit", edit_project_note_path(note.project, note), :action => 'edit' %></td>
+    <td><%= link_to "Delete", [note.project, note], :confirm => 'Deleting is irreversible. Are you sure you want to continue?', :method => :delete %></td>
+  </tr>
