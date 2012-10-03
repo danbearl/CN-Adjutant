@@ -26,6 +26,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @time_count = 0
+    @time_logs = @project.time_logs.all
 
     respond_to do |format|
       format.html #index.html.erb

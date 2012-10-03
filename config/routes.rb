@@ -1,5 +1,13 @@
 Adjutant::Application.routes.draw do
 
+  get "time_logs/show"
+
+  get "time_logs/edit"
+
+  get "time_logs/new"
+
+  get "time_logs/index"
+
   get "notes/show"
 
   get "notes/edit"
@@ -13,7 +21,7 @@ Adjutant::Application.routes.draw do
   end
   
   resources :projects do
-  	resources :notes
+  	resources :notes, :time_logs
   end
   
   resources :notes

@@ -1,0 +1,7 @@
+  <tr>
+    <td><%= time_log.start_time %></td>
+    <td><%= time_log.end_time %></td>
+    <td><%= number_with_precision(((time_log.end_time.to_i - time_log.start_time.to_i)/60.0/60.0), :precision => 1) %></td>
+    <td><%= link_to "Edit", edit_project_time_log_path(time_log.project, time_log), :action => 'edit' %></td>
+    <td><%= link_to "Delete", [time_log.project, time_log], :confirm => 'Deleting is irreversible. Are you sure you want to continue?', :method => :delete %></td>
+  </tr>

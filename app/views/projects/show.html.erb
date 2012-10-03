@@ -68,6 +68,36 @@
   <%= link_to "New Note", new_project_note_path(@project) %>
 </div>
 
+<div class="time_logs_block">
+  <h2>Time Logs</h2>
+<table>
+  <tr>
+    <th>Start</th>
+    <th>Stop</th>
+    <th>Hours</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @time_logs.each do |time_log| %>
+  <tr>
+    <% @hours = number_with_precision(((time_log.end_time.to_i - time_log.start_time.to_i)/60.0/60.0), :precision => 1) %>
+    <% @time_count = @time_count + @hours.to_f %>
+    <td><%= time_log.start_time %></td>
+    <td><%= time_log.end_time %></td>
+    <td><%= @hours %></td>
+    <td><%= link_to "Edit", edit_project_time_log_path(time_log.project, time_log), :action => 'edit' %></td>
+    <td><%= link_to "Delete", [time_log.project, time_log], :confirm => 'Deleting is irreversible. Are you sure you want to continue?', :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+<p>
+	Total Hours: <%= @time_count %>
+</p>
+<br />
+
+  <%= link_to "New Time Log", new_project_time_log_path(@project) %>
+</div>
+
 
 <%= link_to 'Edit', edit_client_project_path(@project) %> |
 <%= link_to 'Back', client_path(@project.client) %>
