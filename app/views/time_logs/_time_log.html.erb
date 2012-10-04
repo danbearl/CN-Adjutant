@@ -1,3 +1,5 @@
+    <% @hours = number_with_precision(((time_log.end_time.to_i - time_log.start_time.to_i)/60.0/60.0), :precision => 1) %>
+    <% @time_count = @time_count + @hours.to_f %>
   <tr>
     <td><%= time_log.start_time %></td>
     <td><%= time_log.end_time %></td>

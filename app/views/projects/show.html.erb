@@ -31,17 +31,12 @@
 
 <p>
 	<b>Hourly Rate:</b>
-	<%= @project.rate %><br />
-</p>
-
-<p>
-	<b>Hours To Date:</b>
-	<em>Future Feature will calculate hours based on time logs associated with project.</em><br />
+	<%= number_to_currency @project.rate %><br />
 </p>
 
 <p>
 	<b>Estimated Cost:</b>
-	<%= @project.estimated_cost %><br />
+	<%= number_to_currency @project.estimated_cost %><br />
 </p>
 
 <p>
@@ -78,20 +73,15 @@
     <th></th>
     <th></th>
   </tr>
-  <% @time_logs.each do |time_log| %>
-  <tr>
-    <% @hours = number_with_precision(((time_log.end_time.to_i - time_log.start_time.to_i)/60.0/60.0), :precision => 1) %>
-    <% @time_count = @time_count + @hours.to_f %>
-    <td><%= time_log.start_time %></td>
-    <td><%= time_log.end_time %></td>
-    <td><%= @hours %></td>
-    <td><%= link_to "Edit", edit_project_time_log_path(time_log.project, time_log), :action => 'edit' %></td>
-    <td><%= link_to "Delete", [time_log.project, time_log], :confirm => 'Deleting is irreversible. Are you sure you want to continue?', :method => :delete %></td>
-  </tr>
-  <% end %>
+  
+<%= render @time_logs %>
+
 </table>
 <p>
-	Total Hours: <%= @time_count %>
+	Total Hours: <%= number_with_precision @time_count, :precision => 1 %>
+</p>
+<p>
+	Total Hourly Charges: <%= number_to_currency @time_count * @project.rate %>
 </p>
 <br />
 
