@@ -1,0 +1,30 @@
+%h1 Showing Client #{client.name}
+%p
+  %strong= "Company: #{client.company}"
+%p
+  %strongAddress:
+%p
+  %strongPhone:
+%p
+  %strong Notes:
+  = client.notes
+
+.projects_block
+  %h2 Projects
+
+%table
+  %tr
+    %th Name
+    %th ESD
+    %th ECD
+    %th Rate
+    %th view
+    %th edit
+    %th delete
+  = render projects
+
+  = link_to "New Project", new_client_project_path(client)
+
+= link_to "Edit", edit_client_path(client)
+|
+= link_to "Back", clients_path

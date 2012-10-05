@@ -1,7 +1,7 @@
-<%= form_for(@client) do |f| %>
-  <% if @client.errors.any? %>
+<%= form_for(client) do |f| %>
+  <% if client.errors.any? %>
     <div id="errorExplanation">
-      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this post from being saved:</h2>
       <ul>
         <%= @client.errors.full_message.each do |msg| %>
           <li><%= msg %></li>

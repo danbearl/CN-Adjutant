@@ -1,0 +1,1 @@
+Fabricator(:project) do; end
