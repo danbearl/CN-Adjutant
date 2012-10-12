@@ -1,17 +1,18 @@
 class ProjectsController < ApplicationController
+  expose(:client)
   expose(:projects)
   expose(:project)
-  expose(:client)
-  expose(:this_client) {project.client}
+  expose(:owner) {project.client}
   expose(:time_log)
   expose(:time_logs)
+
   def create
-      @project = client.projects.new(params[:project])
-      if @project.save
-      	redirect_to client_project_path(client, @project), notice: "Project successfully created."
-      else
-      	render "new"
-      end
+    @project = client.projects.new(params[:project])
+    if @project.save
+      redirect_to client_project_path(client, @project), notice: "Project successfully created."
+    else
+      render "new"
+    end
   end
 
   def destroy

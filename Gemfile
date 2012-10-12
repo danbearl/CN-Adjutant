@@ -22,5 +22,7 @@ group :test do
   gem 'cucumber-rails'
   gem 'dirty'
   gem 'rspec-rails'
+  gem 'launchy'
+
 end
 

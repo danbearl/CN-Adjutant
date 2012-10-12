@@ -53,7 +53,7 @@
     <th></th>
     <th></th>
   </tr>
-  
+
   <%= render project.notes %>
 </table>
 <br />
@@ -63,7 +63,7 @@
 
 <div class="time_logs_block">
   <h2>Time Logs</h2>
-  <% @time_count = 0 %>  
+  <% @time_count = 0 %>
 <table>
   <tr>
     <th>Start</th>
@@ -72,21 +72,29 @@
     <th></th>
     <th></th>
   </tr>
-  
-<%= render time_logs %>
+
+<%# <%= render time_logs %1> %>
+<% time_logs.each do |log| %>
+  <tr>
+  <td><%= log.started_at %>
+  <td><%= log.ended_at %>
+  <td><%= log.total_time %>
+</tr>
+<% end %>
 
 </table>
 <p>
 Total Hours: <em>Feature coming soon.</em>
 </p>
+
 <p>
 Total Hourly Charges: <em>Feature coming soon.</em>
 </p>
-<br />
 
+<br />
   <%= link_to "New Time Log", new_project_time_log_path(project) %>
 </div>
 
 
 <%= link_to 'Edit', edit_client_project_path(project) %> |
-<%= link_to 'Back', client_path(this_client) %>
+<%= link_to 'Back', client_path(owner) %>

@@ -18,15 +18,18 @@ When /^I fill in the following:$/ do |form|
   data = form.raw
 
   data.each do |f|
-	fill_in f[0], :with => f[1]
+    fill_in f[0], :with => f[1]
   end
 end
 
 When /^I press "(.*?)"$/ do |action|
-       click_button action
-end       
-
-Then /^I should see "(.*?)"$/ do |text|
-	page.should have_content text
+  click_button action
 end
 
+Then /^I should see "(.*?)"$/ do |text|
+  page.should have_content text
+end
+
+Then "show me the page" do
+  save_and_open_page
+end
