@@ -1,12 +1,12 @@
-<h1>Edit Project <%= @project.id %></h1>
+<h1>Edit Project <%= project.id %></h1>
   
-<%= form_for @project, :url => {:action => "update"} do |f| %>
+<%= form_for project, :url => {:action => "update"} do |f| %>
 
-  <% if @project.errors.any? %>
+  <% if project.errors.any? %>
     <div id="errorExplanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
       <ul>
-        <%= @project.errors.full_message.each do |msg| %>
+        <%= project.errors.full_message.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -58,4 +58,4 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', client_project_path(@project.client, @project) %>
+<%= link_to 'Back', client_project_path(project.client, project) %>

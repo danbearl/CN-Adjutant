@@ -3,12 +3,12 @@ Feature: Invoices
   Given the following client:
     | name    | Micah      |
     | company | hashrocket |
-  And that company has the following project:
+  And that client has the following project:
     | name | adjutant |
   And I am on that client's page
 
   When I follow "create new invoice"
-  And I fill in the following:"
+  And I fill in the following:
     | amount due | 100.00     |
     | date due   | 2012-12-12 |
   And I press "create invoice"

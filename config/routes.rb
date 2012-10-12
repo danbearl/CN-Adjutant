@@ -4,7 +4,7 @@ Adjutant::Application.routes.draw do
   resources :time_logs
 
   resources :clients do
-    resources :projects, :invoices, controller: 'clients/projects'
+    resources :projects, :invoices
   end
 
   resources :projects do

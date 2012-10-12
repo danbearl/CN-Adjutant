@@ -1,0 +1,16 @@
+%h1 Clients
+
+%p#notice
+  = notice
+
+%table
+  %tr
+    %th Name
+    %th Company
+    %th
+    %th
+    %th
+
+  = render clients 
+
+= link_to "New Client", new_client_path

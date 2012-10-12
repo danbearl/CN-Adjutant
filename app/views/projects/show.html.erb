@@ -1,42 +1,40 @@
-<h1>Project <%= @project.id %></h1>
-<p>
-	<b>Name:</b>
-	<%= @project.name %><br />
+<h1>Project <%= project.name %></h1>
+<p id="notice">
+	<%= notice %>
 </p>
-
 <p>
 	<b>Statement of work:</b>
-	<%= @project.statement_of_work %><br />
+	<%= project.statement_of_work %><br />
 </p>
 
 <p>
 	<b>Estimated Start Date:</b>
-	<%= @project.estimated_start_date %><br />
+	<%= project.estimated_start_date %><br />
 </p>
 
 <p>
 	<b>Actual Start Date:</b>
-	<%= @project.actual_start_date %><br />
+	<%= project.actual_start_date %><br />
 </p>
 
 <p>
 	<b>Estimated Completion Date:</b>
-	<%= @project.estimated_completion_date %><br />
+	<%= project.estimated_completion_date %><br />
 </p>
 
 <p>
 	<b>Actual Completion Date:</b>
-	<%= @project.actual_completion_date %><br />
+	<%= project.actual_completion_date %><br />
 </p>
 
 <p>
 	<b>Hourly Rate:</b>
-	<%= number_to_currency @project.rate %><br />
+	<%= number_to_currency project.rate %><br />
 </p>
 
 <p>
 	<b>Estimated Cost:</b>
-	<%= number_to_currency @project.estimated_cost %><br />
+	<%= number_to_currency project.estimated_cost %><br />
 </p>
 
 <p>
@@ -56,15 +54,16 @@
     <th></th>
   </tr>
   
-  <%= render @project.notes %>
+  <%= render project.notes %>
 </table>
 <br />
 
-  <%= link_to "New Note", new_project_note_path(@project) %>
+  <%= link_to "New Note", new_project_note_path(project) %>
 </div>
 
 <div class="time_logs_block">
   <h2>Time Logs</h2>
+  <% @time_count = 0 %>  
 <table>
   <tr>
     <th>Start</th>
@@ -74,20 +73,20 @@
     <th></th>
   </tr>
   
-<%= render @time_logs %>
+<%= render time_logs %>
 
 </table>
 <p>
-	Total Hours: <%= number_with_precision @time_count, :precision => 1 %>
+Total Hours: <em>Feature coming soon.</em>
 </p>
 <p>
-	Total Hourly Charges: <%= number_to_currency @time_count * @project.rate %>
+Total Hourly Charges: <em>Feature coming soon.</em>
 </p>
 <br />
 
-  <%= link_to "New Time Log", new_project_time_log_path(@project) %>
+  <%= link_to "New Time Log", new_project_time_log_path(project) %>
 </div>
 
 
-<%= link_to 'Edit', edit_client_project_path(@project) %> |
-<%= link_to 'Back', client_path(@project.client) %>
+<%= link_to 'Edit', edit_client_project_path(project) %> |
+<%= link_to 'Back', client_path(this_client) %>

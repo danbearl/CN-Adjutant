@@ -1,0 +1,11 @@
+%tr
+  %td
+    = client.name
+  %td
+    = client.company
+  %td
+    = link_to "View", client
+  %td
+    = link_to "Edit", edit_client_path(client)
+  %td
+    = link_to "Delete", client, :confirm => "Deleting is irreversable. Do you want to continue?", :method => :delete 

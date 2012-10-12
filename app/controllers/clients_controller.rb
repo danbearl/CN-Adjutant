@@ -1,12 +1,10 @@
 class ClientsController < ApplicationController
-
-  expose(:client) { Client.find(params[:id]) }
-  expose(:clients) { Client.all }
+  expose(:clients)
+  expose(:client)
   expose(:projects) { client.projects }
-
   def create
     if client.save
-      redirect_to client, notice: 'Client was successfully saved.'
+      redirect_to client, notice: 'Client successfully created.'
     else
       render 'new'
     end
@@ -14,7 +12,7 @@ class ClientsController < ApplicationController
 
   def update
     if client.save
-      redirect_to client, notice: "Client updated successfully."
+      redirect_to client, notice: "Client successfully updated."
     else
       render action: "edit"
     end
@@ -22,7 +20,6 @@ class ClientsController < ApplicationController
 
   def destroy
     client.destroy
-    redirect_to clients_path
+    redirect_to clients_path, notice: "Client successfully deleted."
   end
-
 end

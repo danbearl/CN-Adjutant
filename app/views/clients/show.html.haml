@@ -1,17 +1,18 @@
 %h1 Showing Client #{client.name}
+%p#notice
+  = notice
 %p
   %strong= "Company: #{client.company}"
 %p
-  %strongAddress:
+  %strong= "Address: #{client.address}"
 %p
-  %strongPhone:
+  %strong= "Phone: #{client.phone}"
 %p
   %strong Notes:
   = client.notes
 
 .projects_block
   %h2 Projects
-
 %table
   %tr
     %th Name
@@ -21,10 +22,9 @@
     %th view
     %th edit
     %th delete
-  = render projects
-
-  = link_to "New Project", new_client_project_path(client)
-
-= link_to "Edit", edit_client_path(client)
-|
-= link_to "Back", clients_path
+  = render client.projects
+= link_to "New Project", new_client_project_path(client)
+%p
+  = link_to "Edit", edit_client_path(client)
+  |
+  = link_to "Back", clients_path
